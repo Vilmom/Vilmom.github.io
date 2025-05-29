@@ -1,0 +1,28 @@
+:root {
+    --body-large-regular-font-family: "Poppins", Helvetica;
+    --body-large-regular-font-size: 16px;
+    --body-large-regular-font-style: normal;
+    --body-large-regular-font-weight: 400;
+    --body-large-regular-letter-spacing: 0px;
+    --body-large-regular-line-height: 100%;
+    --body-large-semibold-font-family: "Poppins", Helvetica;
+    --body-large-semibold-font-size: 16px;
+    --body-large-semibold-font-style: normal;
+    --body-large-semibold-font-weight: 600;
+    --body-large-semibold-letter-spacing: 0px;
+    --body-large-semibold-line-height: 100%;
+    --for-design: rgba(238, 55, 55, 1);
+    --heading-font-family: "Poppins", Helvetica;
+    --heading-font-size: 28px;
+    --heading-font-style: normal;
+    --heading-font-weight: 600;
+    --heading-letter-spacing: 0px;
+    --heading-line-height: 100%;
+}
+
+@font-face {
+    font-family: 'Terminus';
+    src: url('./assets/TerminusTTF-4.49.3.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
