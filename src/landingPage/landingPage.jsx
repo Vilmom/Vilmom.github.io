@@ -1,5 +1,5 @@
 import "./style.css";
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState, useEffect, useCallback, useRef} from 'react';
 
 export const LandingPage = () => {
     const [selection, setSelection] = useState(0);
@@ -16,8 +16,10 @@ export const LandingPage = () => {
 
     useEffect(() => {
         window.addEventListener("keydown", handleKeyDown);
-        return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [handleKeyDown]);
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        }
+    }, []);
 
     const selected = (index) => ({
         backgroundColor: selection === index ? "#939393" : "black",
@@ -44,18 +46,18 @@ export const LandingPage = () => {
             <div className={"middle"}>
                 <div className={"box"} id={"container"}>
                     <div className={"container1x4"}>
-                        <div className={"top1x4"} style={selected(0)}>
+                        <button className={"top1x4"} style={selected(0)} onMouseEnter={() => setSelection(0)}>
                             {selection === 0 ? "✱" : ""}Projects
-                        </div>
-                        <div className={"middleA1x4"} style={selected(1)}>
+                        </button>
+                        <button className={"middleA1x4"} style={selected(1)} onMouseEnter={() => setSelection(1)}>
                             {selection === 1 ? "✱" : ""}Education
-                        </div>
-                        <div className={"middleB1x4"} style={selected(2)}>
+                        </button>
+                        <button className={"middleB1x4"} style={selected(2)} onMouseEnter={() => setSelection(2)}>
                             {selection === 2 ? "✱" : ""}Job History
-                        </div>
-                        <div className={"bottom1x4"} style={selected(3)}>
+                        </button>
+                        <button className={"bottom1x4"} style={selected(3)} onMouseEnter={() => setSelection(3)}>
                             {selection === 3 ? "✱" : ""}Contact
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
