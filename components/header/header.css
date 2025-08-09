@@ -1,0 +1,45 @@
+.header-alt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.primary-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 16.6rem;
+    margin: 0 auto;
+}
+
+.primary-nav-menu {
+    display: flex;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 5rem;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-button, .nav-link {
+    background: none;
+    border: none;
+    color: #000;
+    font-family: "Roboto Condensed", serif;
+    font-size: 3rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}

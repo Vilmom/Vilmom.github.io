@@ -2,27 +2,34 @@ import "./style.css";
 import React, {useState, useEffect, useCallback, useRef} from 'react';
 import {useNavigate} from "react-router-dom";
 import { gsap } from "gsap";
-
+// Issues: Pressing Enter routes to original selection useState and M1 doesn't route anywhere due to timeline issues
 export const LandingPage = () => {
     const [selection, setSelection] = useState(0);
     const navigate = useNavigate();
-    var timeline;
     const timelineRef = useRef(null);
+    const selectionRef = useRef(selection);
     var screen = '.screen';
+
+    useEffect(() => {
+        selectionRef.current = selection;
+    }, [selection]);
 
     const handleKeyDown = useCallback((event) => {
         switch (event.key) {
             case "ArrowUp":
-                return setSelection((prev) => Math.max(prev - 1, 0));
+                setSelection((prev) => Math.max(prev - 1, 0));
+                break;
             case "ArrowDown":
-                return setSelection((prev) => Math.min(prev + 1, 3));
+                setSelection((prev) => Math.min(prev + 1, 3));
+                break;
             case "Enter":
-                navigation(selection);
+                navigation(selectionRef.current);
+                break;
         }
-    }, []);
+    }, [navigation]);
 
-    function buildTimeline(){
-        timeline = gsap.timeline({paused: true});
+    const buildTimeline = useCallback(() => {
+        const timeline = gsap.timeline({paused: true});
         timeline.to(screen,{
             duration: .2,
             width: '100vw',
@@ -38,10 +45,10 @@ export const LandingPage = () => {
             });
         timelineRef.current = timeline;
         return timeline;
-    }
+    }, [screen]);
 
     function navigation(page){
-        timeline.restart();
+        timelineRef.current.restart();
         setTimeout(() => {
             switch (page){
                 case 0:
@@ -72,6 +79,7 @@ export const LandingPage = () => {
     const selected = (index) => ({
         backgroundColor: selection === index ? "#939393" : "black",
         color: selection === index ? "black" : "white",
+        cursor: 'pointer',
     })
 
     return (

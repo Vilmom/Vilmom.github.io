@@ -8,8 +8,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
     background: black;
 }
 
@@ -18,8 +16,8 @@ html, body {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     transform: translate(-50%, -50%);
     content: " ";
     overflow: hidden;
@@ -35,7 +33,6 @@ html, body {
     align-items: center;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
 }
 
 .container1x4 {
@@ -54,7 +51,7 @@ html, body {
     color: black;
     width: 100%;
     text-align: left;
-    font-family: Terminus;
+    font-family: "Terminus", serif;
     font-size: calc(12px + 3vi);
 }
 
@@ -64,7 +61,7 @@ html, body {
     color: white;
     width: 100%;
     text-align: left;
-    font-family: Terminus;
+    font-family: "Terminus", serif;
     font-size: calc(12px + 3vi);
 }
 
@@ -74,7 +71,7 @@ html, body {
     color: white;
     width: 100%;
     text-align: left;
-    font-family: Terminus;
+    font-family: "Terminus", serif;
     font-size: calc(12px + 3vi);
 }
 
@@ -84,7 +81,7 @@ html, body {
     color: white;
     width: 100%;
     text-align: left;
-    font-family: Terminus;
+    font-family: "Terminus", serif;
     font-size: calc(12px + 3vi);
 }
 
@@ -141,13 +138,13 @@ html, body {
 }
 
 .headerText {
-    font-family: Terminus;
+    font-family: "Terminus", serif;
     color: white;
     font-size: calc(12px + 4vi);
 }
 
 .footerText {
-    font-family: Terminus;
+    font-family: "Terminus", serif;
     color: white;
     font-size: calc(12px + 1vi);
     justify-content: center;
@@ -159,7 +156,7 @@ html, body {
     width: 50vw;
     height: 33vh;
     border: 5px solid #939393;
-    font-family: Terminus;
+    font-family: "Terminus", serif;
     color: white;
     font-size: calc(12px + 4vi);
 }
